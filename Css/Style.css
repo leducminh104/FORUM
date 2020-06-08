@@ -1,0 +1,201 @@
+section.nav{
+    background-color: cadetblue;
+}
+
+*{
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/*margin = Le
+* padding = vung dem
+* list-style-type = none // cac budlet an di
+* display: flex = dan hang theo chieu ngang
+*/
+section.nav > ul{
+    list-style-type: none;
+    padding:0;
+    margin: 0;
+    display: flex;
+}
+/*min-width = khoang cach nho nhat giua cac le = 80px
+* text-align: center = van ban giua~.
+* border-right = duong bien ben phai = 1px
+*/
+section.nav > ul >li{    
+    border-right: 1px solid white;
+    min-width: 80px;
+    text-align: center;
+}
+/* hover =  xu ly cac hieu ung*/
+section.nav > ul >li > a:hover{
+    background-color: darkblue;
+    color: white;
+}
+/*
+    ul.left >li:last-child = bo di duong vien cua thuoc tinh border right chi ap dung cho phan tu cuoi cung
+*/
+ul.left >li:last-child{
+    border-right: none;
+}
+
+/* text-decoration: none = bo URL gach chan*/
+section.nav > ul > li > a{
+    text-decoration: none;
+    display: block;
+    padding: 10px 8px;
+}
+
+/*
+    chinh cac the ul sang trai phai va clearfix overflow: hidden de hien mau nen
+*/
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.clearfix {
+    overflow: hidden;
+}
+
+/*
+    linear-gradient(darkblue, blue); TO MAU NEN nhung tron^. 2 mau
+*/
+section.banner{
+ background: linear-gradient(darkblue, blue);
+ display: flex;
+ margin-top: 5px;
+}
+
+section.banner > h1{
+    color: white;
+    font-size: 36px;
+    /*Lam mo anh*/
+    text-shadow: 2px 3px 2px antiquewhite;
+    position: relative;
+    left: 10%;
+    animation: doimau .5s infinite;
+}
+
+@keyframes doimau{
+    from {
+        color: white;
+    }
+    to{
+        color: gold;
+    }
+}
+
+section.content{
+    width: 70%;
+    margin: 5px auto;
+}
+
+div.posts{
+    background-color: lightblue;
+}
+div.subject > h1{
+    color: white;
+    background-color: darkblue;
+    margin: 0;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+}
+
+.col1{
+    width: 10%;
+}
+
+.col2{
+    width: 40%;
+}
+
+.col3{
+    width: 20%;
+
+}
+
+.col4{
+    width: 30%;
+    direction: rtl;
+}
+
+.col1 > img {
+    width: 100%;
+    border-radius: 50%;
+    background-color: black;
+    transition: transform ease-in-out .5s;
+}
+
+.col1 img:hover{
+    transform: skew(-20deg);
+}
+
+div.post{
+    display: flex;
+    border-bottom: 1px solid white;
+}
+
+ul, p{
+    margin: 0;
+}
+
+.col{
+    padding: 10px;
+}
+
+.col > ul{
+    list-style-type: none;
+}
+
+section.ads > div{
+    position: fixed;
+    background: linear-gradient(lightblue, darkblue);
+    padding: 120px 5px;
+    border-radius: 10px;
+}
+
+div.ads-left{
+    left:9px;
+}
+
+div.ads-right{
+    right: 9px;
+}
+
+section.footer{
+    background-image: url(../images/bg_footer.jpg);
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-color: #076fa3;
+    padding: 15px;
+}
+
+.tooltipcontent{
+    background-color: chocolate;
+    padding: 5px;
+    border-radius: 10px;
+    display: none;
+    position: absolute;
+    z-index: 5;
+    width: 200px;
+    margin-left: -140px;
+}
+
+.tooltipcontent::after{
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent chocolate transparent;
+    position: absolute;
+    top: -20px;
+    right:10% ;
+
+}
+.tooltip:hover .tooltipcontent{
+    display:block ;
+}
